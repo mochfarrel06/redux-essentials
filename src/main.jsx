@@ -5,11 +5,16 @@ import {RouterProvider, createBrowserRouter} from "react-router-dom";
 import HomePage from "./pages/home";
 import store from "./app/store";
 import {Provider} from "react-redux";
+import SinglePost from "./pages/singlePost";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/posts/:postId",
+    element: <SinglePost />,
   },
 ]);
 
