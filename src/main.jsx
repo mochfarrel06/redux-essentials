@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import store from "./app/store";
 import {Provider} from "react-redux";
 import SinglePost from "./pages/singlePost";
+import EditPostPage from "./pages/editPost";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/posts/:postId",
     element: <SinglePost />,
+  },
+  {
+    path: "/editpost/:postId",
+    element: <EditPostPage />,
   },
 ]);
 
