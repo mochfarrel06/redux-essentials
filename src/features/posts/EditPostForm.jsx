@@ -8,7 +8,7 @@ export const EditPostForm = () => {
 
   // Mengambil id dari article
   const post = useSelector((state) =>
-    state.posts.find((post) => post.id === Number(postId))
+    state.posts.find((post) => post.id === Number(postId) || post.id === postId)
   );
 
   const [title, setTitle] = useState(post.title);

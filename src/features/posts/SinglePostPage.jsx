@@ -6,7 +6,7 @@ export const SinglePostPage = () => {
   const {postId} = useParams();
 
   const post = useSelector((state) =>
-    state.posts.find((post) => post.id === Number(postId))
+    state.posts.find((post) => post.id === Number(postId) || post.id === postId)
   );
 
   if (!post) {
