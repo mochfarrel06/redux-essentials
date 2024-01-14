@@ -1,15 +1,13 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {postUpdated} from "./postsSlice";
+import {postUpdated, selectPostById} from "./postsSlice";
 
 export const EditPostForm = () => {
   const {postId} = useParams();
 
   // Mengambil id dari article
-  const post = useSelector((state) =>
-    state.posts.find((post) => post.id === Number(postId) || post.id === postId)
-  );
+  const post = useSelector((state) => selectPostById(state, postId));
 
   const [title, setTitle] = useState(post.title);
   const [content, setContent] = useState(post.content);
