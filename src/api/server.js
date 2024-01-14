@@ -5,6 +5,7 @@ import faker from "faker";
 import seedrandom from "seedrandom";
 import {Server as MockSocketServer} from "mock-socket";
 import {setRandom} from "txtgen";
+
 import {parseISO} from "date-fns";
 
 const NUM_USERS = 3;
@@ -12,6 +13,7 @@ const POSTS_PER_USER = 3;
 const RECENT_NOTIFICATIONS_DAYS = 7;
 
 // Add an extra delay to all endpoints, so loading spinners show up.
+const ARTIFICIAL_DELAY_MS = 2000;
 
 /* RNG setup */
 
@@ -19,7 +21,6 @@ const RECENT_NOTIFICATIONS_DAYS = 7;
 // a consistent set of users / entries each time the page loads.
 // This can be reset by deleting this localStorage value,
 // or turned off by setting `useSeededRNG` to false.
-
 let useSeededRNG = true;
 
 let rng = seedrandom();
